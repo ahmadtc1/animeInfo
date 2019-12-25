@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
 import model
 
 app = Flask(__name__)
+app.secret_key='Jabu is a cool boi'
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
@@ -14,14 +15,15 @@ def home():
 			session['submittedAnime'] = submittedAnime
 			return redirect('/anime')
 		else:
+			pass
 
 
 @app.route("/anime")
 def default():
 	submittedAnime = session.get('anime', None)
-	result = model.getAnimeInfo(submittedAnime)
+	results = model.getAnimeInfo(submittedAnime)
 
-	return render_template("anime.html", anime=submittedAnime, result=result)
+	return render_template("anime.html", anime=submittedAnime, results=results)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,9 @@
     </head>
     <body>
         <h1>
-            Your Anime Info
+            Your Anime Info: {{anime}}
         </h1>
-        
+        {% for result in results %}
+            <p>{{result}}</p>
+        {% endfor %}
 </html>
