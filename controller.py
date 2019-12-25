@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
+import model
 
 app = Flask(__name__)
 
@@ -9,12 +10,18 @@ def home():
 
 	else:
 		submittedAnime = request.form['anime']
-		return 
+		if (model.isValidStatusCode(submittedAnime)):
+			session['submittedAnime'] = submittedAnime
+			return redirect('/anime')
+		else:
 
 
-@app.route("/")
+@app.route("/anime")
 def default():
-	return render_template("home.html")
+	submittedAnime = session.get('anime', None)
+	result = model.getAnimeInfo(submittedAnime)
+
+	return render_template("anime.html", anime=submittedAnime, result=result)
 
 
 if __name__ == "__main__":
