@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>FlaskApp</title>
+        <title>AnimeInfo</title>
     </head>
     <body>
         <h1>
             Your Anime Info: {{anime}}
         </h1>
         {% for result in results %}
-            <p>{{result}}</p>
+            <h3>{{result[0]}}</h3>
+            <p>{{result[1]}}</p>
         {% endfor %}
 </html>

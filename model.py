@@ -1,14 +1,13 @@
 import requests
 
 def getAnimeInfo(anime):
-    response = requests.get("https://api.jikan.moe/v3/search/anime?q={}".format(anime))
+    response = requests.get("https://api.jikan.moe/v3/search/anime?q={}&limit=5".format(anime))
     response = response.json()
     response = response["results"]
     returnData = []
     for singleResponse in response:
-        returnData.append(singleResponse["title"])
+        returnData.append([singleResponse["title"], singleResponse["synopsis"]])
     return returnData
-
 
 
 def isValidStatusCode(anime):

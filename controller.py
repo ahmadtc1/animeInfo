@@ -15,16 +15,20 @@ def home():
 			session['submittedAnime'] = submittedAnime
 			return redirect('/anime')
 		else:
-			pass
+			return redirect('/invalid')
 
 
 @app.route("/anime")
 def default():
-	submittedAnime = session.get('anime', None)
+	submittedAnime = session.get('submittedAnime', None)
 	results = model.getAnimeInfo(submittedAnime)
 
 	return render_template("anime.html", anime=submittedAnime, results=results)
 
+
+@app.route("/invalid")
+def invalid():
+	return render_template("invalid.html")
 
 if __name__ == "__main__":
 	app.run(debug=True)
