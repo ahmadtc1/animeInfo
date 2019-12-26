@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.body {
+    background-image: linear-gradient(90deg, #d966ff, #ffffff)
+}
+
 .anime-input {
     width: 65%;
     color: #5A85F4;

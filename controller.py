@@ -4,6 +4,10 @@ import model
 app = Flask(__name__)
 app.secret_key='Jabu is a cool boi'
 
+@app.route("/", methods=["GET"])
+def default():
+	return redirect('/home')
+
 @app.route("/home", methods=['GET', 'POST'])
 def home():
 	if request.method == 'GET':
@@ -18,7 +22,7 @@ def home():
 			return redirect('/invalid')
 
 @app.route("/anime")
-def default():
+def anime():
 	submittedAnime = session.get('submittedAnime', None)
 	results = model.getAnimeInfo(submittedAnime)
 
