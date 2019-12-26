@@ -6,9 +6,18 @@ def getAnimeInfo(anime):
     response = response["results"]
     returnData = []
     for singleResponse in response:
-        returnData.append([singleResponse["title"], singleResponse["synopsis"]])
-    return returnData
+        gogoAnimeUrl = "https://www10.gogoanime.io/category/"
+        title = singleResponse["title"]
+        title = title.split()
+        for x in range(len(title)):
+            if (x == 0):
+                gogoAnimeUrl += title[x]
+            else:
+                gogoAnimeUrl += '-'
+                gogoAnimeUrl += title[x]
 
+        returnData.append([singleResponse["title"], singleResponse["synopsis"], gogoAnimeUrl])
+    return returnData
 
 def isValidStatusCode(anime):
     response = requests.get("https://api.jikan.moe/v3/search/anime?q={}".format(anime))

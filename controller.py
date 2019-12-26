@@ -7,7 +7,7 @@ app.secret_key='Jabu is a cool boi'
 @app.route("/home", methods=['GET', 'POST'])
 def home():
 	if request.method == 'GET':
-		return render_template("home.html")
+		return render_template("home.html", animeImage="ylia2.jpg")
 
 	else:
 		submittedAnime = request.form['anime']
@@ -16,7 +16,6 @@ def home():
 			return redirect('/anime')
 		else:
 			return redirect('/invalid')
-
 
 @app.route("/anime")
 def default():

@@ -3,18 +3,24 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="static/home.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap" rel="stylesheet">
         <title>AnimeInfo</title>
     </head>
-    <body>
+    <body class="body" style="background-image: linear-gradient(90deg, #d966ff, #ffffff), url(ylia2.jpg)">
         <div class = "anime-search">
-            <h1>
-                What Anime Are you Looking for today?
+            <h1 class = "site-title">
+                What <span class = "anime">Anime</span> are you looking for today?
             </h1>
             <form action="/home" method="POST">
-                <input type="text" placeholder="Anime Name" name="anime" required>
-                <button type="submit" class="btn btn-primary">
-                    Submit
-                </button>
+                <div class="anime-input-box">
+                    <input type="text" placeholder="Anime Name" name="anime" class="anime-input" required>
+                    <div class="submit-button">
+                        <button type="submit" class="btn btn-primary submit-button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </body>

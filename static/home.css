@@ -1,0 +1,30 @@
+.anime-input-box {
+    text-align: center;
+}
+
+.anime-input {
+    width: 65%;
+    color: #5A85F4;
+    height: 50px;
+    margin: 5px;
+    margin-top: 15px;
+    font-size:200%;
+    font-family: 'Open Sans'; 
+    font-weight:300;
+    text-align: center;
+}
+
+.submit-button {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.site-title {
+    text-align: center;
+    font-family: 'Josefin Sans';
+    margin-top: 20px;
+}
+
+.anime {
+    color: #FFFFFF;
+}
