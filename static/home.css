@@ -3,7 +3,7 @@
 }
 
 .body {
-    background-image: linear-gradient(90deg, #d966ff, #ffffff)
+    background-image: url('ylia2.jpg'), linear-gradient(90deg, #d966ff, #ffffff);
 }
 
 .anime-input {
@@ -30,5 +30,5 @@
 }
 
 .anime {
-    color: #FFFFFF;
+    color: #9900ff;
 }
