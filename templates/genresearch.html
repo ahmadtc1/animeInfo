@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/genresearch.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap" rel="stylesheet">
+        <title>AnimeInfo</title>
+    </head>
+    <body class="body">
+        <div class = "anime-search">
+            <h1 class = "site-title">
+                What <span class = "anime">Genre</span> are you looking for today?
+            </h1>
+            <form action="/animesearch" method="POST">
+                <div class="anime-input-box">
+                    <input type="text" placeholder="Anime Genre" name="genre" class="genre-input" required>
+                    <div class="submit-button">
+                        <button type="submit" class="btn btn-primary submit-button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -15,12 +15,12 @@ def home():
 	if (request.method == 'GET'):
 		return render_template("home.html")
 
-	if (request.method == 'POST'):
+	elif (request.method == 'POST'):
 		if ('animeSearch' in request.form):
 			return redirect('/animesearch')
 
 		elif ('genreSearch' in request.form):
-			return redirect('/invalid')
+			return redirect('/genresearch')
 
 @app.route("/animesearch", methods=["GET", "POST"])
 def animeSearch():
@@ -35,6 +35,17 @@ def animeSearch():
 		else:
 			return redirect('/invalid')
 
+@app.route("/genresearch", methods=["GET", "POST"])
+def genreSearch():
+	if (request.method == "GET"):
+		return render_template("genresearch.html")
+
+	elif (request.method == "POST"):
+		genre = request.form["genre"].lower()
+		if (model.isValidGenreStatusCode(genre)):
+			session["genre"] = genre
+			return redirect('/genre')
+
 @app.route("/anime")
 def anime():
 	submittedAnime = session.get('submittedAnime', None)
@@ -42,6 +53,12 @@ def anime():
 
 	return render_template("anime.html", anime=submittedAnime, results=results)
 
+@app.route("/genre")
+def genre():
+	genre = session.get("genre")
+	results = model.getAnimeGenreInfo(genre)
+	
+	return render_template("genre.html", genre=genre, results=results)
 
 @app.route("/invalid")
 def invalid():
