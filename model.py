@@ -46,13 +46,18 @@ def isValidGenreStatusCode(submittedGenre):
     }
     url = "https://api.jikan.moe/v3/genre/anime/"
     submittedGenre = submittedGenre.lower()
-    for genre in genre:
+    for genre in genres:
         if submittedGenre == genre:
             url += str(genres[genre])
             url += "/1"
-    response = request.get(url)
-    if int(response.status_code == 200):
-        return True
+    
+    if (url != "https://api.jikan.moe/v3/genre/anime/"):
+        response = requests.get(url)
+        if int(response.status_code == 200):
+            return True
+        else:
+            return False
+    
     else:
         return False
 
@@ -75,13 +80,14 @@ def getAnimeGenreInfo(submittedGenre):
     }
     url = "https://api.jikan.moe/v3/genre/anime/"
     submittedGenre = submittedGenre.lower()
-    for genre in genre:
+    for genre in genres:
         if submittedGenre == genre:
             url += str(genres[genre])
             url += "/1"
-    response = request.get(url)
+    response = requests.get(url)
     response = response.json()
     animes = response["anime"]
     returnData = []
     for anime in animes:
         returnData.append([anime["title"], anime["synopsis"]])
+    return returnData

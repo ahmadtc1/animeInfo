@@ -42,9 +42,13 @@ def genreSearch():
 
 	elif (request.method == "POST"):
 		genre = request.form["genre"].lower()
+		session["genre"] = genre
 		if (model.isValidGenreStatusCode(genre)):
 			session["genre"] = genre
 			return redirect('/genre')
+		
+		else:
+			return redirect('/invalid')
 
 @app.route("/anime")
 def anime():
@@ -55,7 +59,7 @@ def anime():
 
 @app.route("/genre")
 def genre():
-	genre = session.get("genre")
+	genre = session.get("genre", None)
 	results = model.getAnimeGenreInfo(genre)
 	
 	return render_template("genre.html", genre=genre, results=results)
