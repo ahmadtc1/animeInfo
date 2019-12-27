@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="static/home.css">
+        <link rel="stylesheet" href="static/animesearch.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap" rel="stylesheet">
         <title>AnimeInfo</title>
@@ -10,13 +10,15 @@
     <body class="body">
         <div class = "anime-search">
             <h1 class = "site-title">
-                Start <span class="keyword">Your</span> Anime Journey
+                What <span class = "anime">Anime</span> are you looking for today?
             </h1>
-            <form action="/home" method="POST">
+            <form action="/animesearch" method="POST">
                 <div class="anime-input-box">
+                    <input type="text" placeholder="Anime Name" name="anime" class="anime-input" required>
                     <div class="submit-button">
-                        <input type="submit" name="animeSearch" value="Search Animes" class="btn btn-primary btn-lg selection-button">
-                        <input type="submit" name="genreSearch" value="Search Genres" class="btn btn-primary btn-lg election-button">
+                        <button type="submit" class="btn btn-primary submit-button">
+                            Submit
+                        </button>
                     </div>
                 </div>
             </form>

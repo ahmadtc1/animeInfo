@@ -8,10 +8,24 @@ app.secret_key='Jabu is a cool boi'
 def default():
 	return redirect('/home')
 
-@app.route("/home", methods=['GET', 'POST'])
+
+
+@app.route("/home", methods=["GET", "POST"])
 def home():
+	if (request.method == 'GET'):
+		return render_template("home.html")
+
+	if (request.method == 'POST'):
+		if ('animeSearch' in request.form):
+			return redirect('/animesearch')
+
+		elif ('genreSearch' in request.form):
+			return redirect('/invalid')
+
+@app.route("/animesearch", methods=["GET", "POST"])
+def animeSearch():
 	if request.method == 'GET':
-		return render_template("home.html", animeImage="ylia2.jpg")
+		return render_template("animesearch.html", animeImage="ylia2.jpg")
 
 	else:
 		submittedAnime = request.form['anime']

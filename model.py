@@ -26,3 +26,62 @@ def isValidStatusCode(anime):
 
     else:
         return False
+
+def isValidGenreStatusCode(submittedGenre):
+    genres = {
+        'action': 1,
+        'adventure': 2,
+        'cars': 3,
+        'comedy': 4,
+        'dementia': 5,
+        'demons': 6,
+        'mystery': 7,
+        'drama': 8,
+        'ecchi': 9,
+        'fantasy': 10,
+        'game': 11,
+        'hentai': 12,
+        'historical': 13,
+        'horror': 14
+    }
+    url = "https://api.jikan.moe/v3/genre/anime/"
+    submittedGenre = submittedGenre.lower()
+    for genre in genre:
+        if submittedGenre == genre:
+            url += str(genres[genre])
+            url += "/1"
+    response = request.get(url)
+    if int(response.status_code == 200):
+        return True
+    else:
+        return False
+
+def getAnimeGenreInfo(submittedGenre):
+    genres = {
+        'action': 1,
+        'adventure': 2,
+        'cars': 3,
+        'comedy': 4,
+        'dementia': 5,
+        'demons': 6,
+        'mystery': 7,
+        'drama': 8,
+        'ecchi': 9,
+        'fantasy': 10,
+        'game': 11,
+        'hentai': 12,
+        'historical': 13,
+        'horror': 14
+    }
+    url = "https://api.jikan.moe/v3/genre/anime/"
+    submittedGenre = submittedGenre.lower()
+    for genre in genre:
+        if submittedGenre == genre:
+            url += str(genres[genre])
+            url += "/1"
+    response = request.get(url)
+    response = response.json()
+    animes = response["anime"]
+    returnData = []
+    for anime in animes:
+        returnData.append([anime["title"], anime["synopsis"]])
