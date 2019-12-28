@@ -34,3 +34,16 @@
 .anime {
     color: #9900ff;
 }
+
+.home-link {
+    color: #ffffff;
+    font-size: 2em;
+    font-family: 'Josefin Sans';
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #9900ff;
+}

@@ -2,3 +2,15 @@
     margin-left: 15px;
     margin-top: 10px;
 }
+
+.home-link {
+    color: #ffffff;
+    font-size: 2em;
+    font-family: 'Josefin Sans';
+    margin-top: 10%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #9900ff;
+}
