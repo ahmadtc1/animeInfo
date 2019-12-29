@@ -1,0 +1,40 @@
+body {
+    background-image: url("invalid.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.invalid-info {
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 80%;
+    border-radius: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-link {
+    color: #ffffff;
+    font-size: 2em;
+    font-family: 'Josefin Sans';
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #9900ff;
+}
+
+.anime-input-box {
+    text-align: center;
+}

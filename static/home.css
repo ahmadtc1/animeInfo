@@ -8,7 +8,7 @@
 }
 
 .body {
-    background-image: url('ylia2.jpg'), linear-gradient(90deg, #d966ff, #ffffff);
+    background-image: url('dbz.jpg'), linear-gradient(90deg, #d966ff, #ffffff);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
@@ -35,4 +35,13 @@
     font-family: 'Josefin Sans';
     margin-top: 20px;
     font-size: 4.5em;
+    color: #aaccff;
+}
+
+.anime-search {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

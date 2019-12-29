@@ -64,9 +64,13 @@ def genre():
 	
 	return render_template("genre.html", genre=genre, results=results)
 
-@app.route("/invalid")
+@app.route("/invalid", methods=["GET", "POST"])
 def invalid():
-	return render_template("invalid.html")
+	if (request.method == "GET"):
+		return render_template("invalid.html")
+	
+	elif(request.method == "POST"):
+		return redirect('/genresearch')
 
 if __name__ == "__main__":
 	app.run(debug=True)

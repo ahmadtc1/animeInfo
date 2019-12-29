@@ -3,11 +3,30 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="static/invalid.css">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap" rel="stylesheet">
         <title>Invalid Anime Submission</title>
     </head>
     <body>
-        <h1>
-            The Anime you have submitted is invalid, please resubmit a valid anime to proceed.
-        </h1>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li>
+                    <a href="http://localhost:5000/home" class="home-link">
+                        AnimeInfo
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1 class="invalid-info">
+                The Anime you have submitted is invalid, please submit a valid anime to proceed.
+            </h1>
+            <form action="/invalid" method="POST">
+                <div class="anime-input-box">
+                    <div class="submit-button">
+                        <input type="submit" name="animeSearch" value="Return to Genre Search" class="btn btn-primary btn-lg selection-button">
+                    </div>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
