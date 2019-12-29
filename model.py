@@ -42,7 +42,16 @@ def isValidGenreStatusCode(submittedGenre):
         'game': 11,
         'hentai': 12,
         'historical': 13,
-        'horror': 14
+        'horror': 14,
+        'kids anime': 15,
+        'kids': 15,
+        'magic anime': 16,
+        'magic': 16,
+        'martial arts': 17,
+        'mecha': 18,
+        'music': 19,
+        'musical': 19,
+        'parody': 20
     }
     url = "https://api.jikan.moe/v3/genre/anime/"
     submittedGenre = submittedGenre.lower()
@@ -77,7 +86,17 @@ def getAnimeGenreInfo(submittedGenre):
         'game': 11,
         'hentai': 12,
         'historical': 13,
-        'horror': 14
+        'horror': 14,
+        'kids anime': 15,
+        'kids': 15,
+        'magic anime': 16,
+        'magic': 16,
+        'martial arts': 17,
+        'mecha': 18,
+        'music': 19,
+        'musical': 19,
+        'parody': 20
+
     }
     url = "https://api.jikan.moe/v3/genre/anime/"
     submittedGenre = submittedGenre.lower()
