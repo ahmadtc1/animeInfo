@@ -1,25 +1,20 @@
 body {
-    background-image: url("invalid.png");
+    background-image: url("invalid.jpg");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
 
 .invalid-info {
     text-align: center;
-    color: #000000;
-    background-color: #ffffff;
-    opacity: 80%;
-    border-radius: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    color: #ffffff;
+    font-family: 'Josefin Sans';
 }
 
 .content {
     margin: 0;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 .home-link {
@@ -37,4 +32,5 @@ a:hover {
 
 .anime-input-box {
     text-align: center;
+    margin-top: 3em;
 }

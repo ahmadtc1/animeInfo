@@ -25,7 +25,7 @@ def home():
 @app.route("/animesearch", methods=["GET", "POST"])
 def animeSearch():
 	if request.method == 'GET':
-		return render_template("animesearch.html", animeImage="ylia2.jpg")
+		return render_template("animesearch.html")
 
 	else:
 		submittedAnime = request.form['anime']
