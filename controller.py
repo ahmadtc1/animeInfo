@@ -8,8 +8,6 @@ app.secret_key='Jabu is a cool boi'
 def default():
 	return redirect('/home')
 
-
-
 @app.route("/home", methods=["GET", "POST"])
 def home():
 	if (request.method == 'GET'):
