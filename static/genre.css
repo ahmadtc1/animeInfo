@@ -14,3 +14,20 @@ a:hover {
     text-decoration: none;
     color: #9900ff;
 }
+
+.new-search {
+    margin-left: 2em;
+    margin-top: 0.5em;
+}
+
+.searched-anime {
+    padding-left: 0.7em;
+}
+
+.genre-result {
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

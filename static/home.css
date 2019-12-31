@@ -45,3 +45,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.home-link {
+    color: #000000;
+    font-size: 2em;
+    font-family: 'Josefin Sans';
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #9900ff;
+}

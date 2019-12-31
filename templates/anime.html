@@ -17,15 +17,24 @@
             </ul>
         </nav>
         <div class="body">
-            <h1>
-                Your Anime Info: {{anime}}
-            </h1>
-            {% for result in results %}
-                <h3>{{result[0]}}</h3>
-                <p>{{result[1]}}</p>
-                <a href={{result[2]}}>
-                    <p>Streaming Link</p>
+            <div class="row">
+                <h1 class="searched-anime">
+                    Your Anime Info: {{anime}}
+                </h1>
+                <a href="{{url_for('animeSearch')}}">
+                    <button class="btn btn-primary new-search">
+                        New Search
+                    </button>
                 </a>
+            </div>
+            {% for result in results %}
+                <div class="anime-result">
+                    <h3>{{result[0]}}</h3>
+                    <p>{{result[1]}}</p>
+                    <a href={{result[2]}}  target="_blank">
+                        <button class="btn btn-primary">Streaming Link</button>
+                    </a>
+                </div>
             {% endfor %}
         </div>
     </body>

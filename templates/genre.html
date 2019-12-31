@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/anime.css">
+        <link rel="stylesheet" href="static/genre.css">
         <title>AnimeInfo</title>
     </head>
     <body style="background-image: linear-gradient(90deg, #d966ff, #ffffff)">
@@ -17,12 +17,21 @@
             </ul>
         </nav>
         <div class="body">
-            <h1>
-                Your Anime Info: {{genre}}
-            </h1>
+            <div class="row">
+                <h1 class="searched-anime">
+                    Your Anime Info: {{genre}}
+                </h1>
+                <a href="{{url_for('genreSearch')}}">
+                    <button class="btn btn-primary new-search">
+                        New Search
+                    </button>
+                </a>
+            </div>
             {% for result in results %}
-                <h3>{{result[0]}}</h3>
-                <p>{{result[1]}}</p>
+                <div class="genre-result">
+                    <h3>{{result[0]}}</h3>
+                    <p>{{result[1]}}</p>
+                </div>
             {% endfor %}
         </div>
     </body>
