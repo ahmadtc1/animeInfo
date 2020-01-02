@@ -68,7 +68,7 @@ def invalid():
 		return render_template("invalid.html")
 	
 	elif(request.method == "POST"):
-		return redirect('/genresearch')
+		return redirect('/animesearch')
 
 if __name__ == "__main__":
 	app.run(debug=True)

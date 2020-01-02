@@ -21,7 +21,9 @@ def getAnimeInfo(anime):
 
 def isValidStatusCode(anime):
     response = requests.get("https://api.jikan.moe/v3/search/anime?q={}".format(anime))
-    if int(response.status_code) == 200:
+    statusCode = int(response.status_code)
+    response = response.json()
+    if (statusCode == 200 and len(response["results"]) > 0):
         return True
 
     else:
