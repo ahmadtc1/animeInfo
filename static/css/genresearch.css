@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.dropdown {
+    font-size: 1.5em;
+}
+
 .body {
     background-image: url('genre.jpg'), linear-gradient(90deg, #d966ff, #ffffff);
     background-repeat: no-repeat;

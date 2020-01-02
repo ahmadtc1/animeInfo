@@ -25,29 +25,31 @@
             </h1>
             <form action="/genresearch" method="POST">
                 <div class="genre-input-box">
-                    <select name="genre">
-                        <option value="Action">Action</option>
-                        <option value="Adventure">Adventure</option>
-                        <option value="Cars">Cars</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Dementia">Dementia</option>
-                        <option value="Demons">Demons</option>
-                        <option value="Mystery">Mystery</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Ecchi">Ecchi</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Game">Game</option>
-                        <option value="Historical">Historical</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Kids Anime">Kids</option>
-                        <option value="Magic Anime">Magic</option>
-                        <option value="Martial Arts">Martial Arts</option>
-                        <option value="Mecha">Mecha</option>
-                        <option value="Music">Music</option>
-                        <option value="Parody">Parody</option>
-                    </select>
+                    <div class="dropdown">
+                        <select name="genre">
+                            <option value="Action">Action</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Cars">Cars</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Dementia">Dementia</option>
+                            <option value="Demons">Demons</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Ecchi">Ecchi</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Game">Game</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Kids Anime">Kids</option>
+                            <option value="Magic Anime">Magic</option>
+                            <option value="Martial Arts">Martial Arts</option>
+                            <option value="Mecha">Mecha</option>
+                            <option value="Music">Music</option>
+                            <option value="Parody">Parody</option>
+                        </select>
+                    </div>
                     <div class="submit-button">
-                        <button type="submit" class="btn btn-primary submit-button">
+                        <button type="submit" class="btn btn-primary btn-lg submit-button">
                             Search
                             <i class="fas fa-search search-icon"></i>
                         </button>
