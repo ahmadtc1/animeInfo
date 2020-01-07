@@ -16,7 +16,7 @@ def getAnimeInfo(anime):
                 gogoAnimeUrl += '-'
                 gogoAnimeUrl += title[x]
 
-        returnData.append([singleResponse["title"], singleResponse["synopsis"], gogoAnimeUrl])
+        returnData.append([singleResponse["title"], singleResponse["synopsis"], gogoAnimeUrl, singleResponse["score"], singleResponse["image_url"]])
     return returnData
 
 def isValidStatusCode(anime):
