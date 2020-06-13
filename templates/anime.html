@@ -41,13 +41,13 @@
                     <div class="anime-result">
                         <div class="row">
                             <div class="col-md-3">
-                                <img class="anime-img" src="{{result[4]}}" alt="image"/>
+                                <img class="anime-img" src={{result.img}} alt="image"/>
                             </div>
                             <div class="col-md-9">
-                                <h2 class="title">{{result[0]}}</h2>
-                                <h4>{{result[3]}}/10</h4>
-                                <p>{{result[1]}}</p>
-                                <a href={{result[2]}}  target="_blank">
+                                <h2 class="title">{{result.title}}</h2>
+                                <h4>{{result.rating}}/10</h4>
+                                <p>{{result.synopsis}}</p>
+                                <a href={{result.url}}  target="_blank">
                                     <button class="btn btn-primary">Streaming Link</button>
                                 </a>
                             </div>

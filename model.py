@@ -20,7 +20,14 @@ def getAnimeInfo(anime):
     for singleResponse in response:
         title = singleResponse["title"]
         gogoAnimeUrl = genGogoAnimeUrl(title)
-        returnData.append([singleResponse["title"], singleResponse["synopsis"], gogoAnimeUrl, singleResponse["score"], singleResponse["image_url"]])
+        dict = {
+            'title': singleResponse['title'],
+            'synopsis': singleResponse['synopsis'],
+            'url': gogoAnimeUrl,
+            'rating': singleResponse['score'],
+            'img': singleResponse["image_url"]
+        }
+        returnData.append(dict)
     return returnData
 
 def isValidStatusCode(anime):
@@ -158,7 +165,16 @@ def getAnimeGenreInfo(submittedGenre):
     returnData = []
     for anime in animes:
         gogoAnimeUrl = genGogoAnimeUrl(anime["title"])
-        returnData.append([anime["title"], anime["synopsis"], gogoAnimeUrl, anime["score"], anime["image_url"]])
+        dict = {
+            'title': anime['title'],
+            'synopsis': anime['synopsis'],
+            'url': gogoAnimeUrl,
+            'rating': anime['score'],
+            'img': anime["image_url"]
+        }
+        returnData.append(dict)
+
+        returnData = sorted(returnData, key=lambda k: k['rating'], reverse = True)
     return returnData
 
 
