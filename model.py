@@ -1,21 +1,25 @@
 import requests
 
+def genGogoAnimeUrl(title):
+    gogoAnimeUrl = "https://www10.gogoanime.io/category/"
+    title = title.split()
+    for x in range(len(title)):
+        if (x == 0):
+            gogoAnimeUrl += title[x]
+        else:
+            gogoAnimeUrl += '-'
+            gogoAnimeUrl += title[x]
+    
+    return gogoAnimeUrl
+
 def getAnimeInfo(anime):
-    response = requests.get("https://api.jikan.moe/v3/search/anime?q={}&limit=5".format(anime))
+    response = requests.get("https://api.jikan.moe/v3/search/anime?q={}&limit=30".format(anime))
     response = response.json()
     response = response["results"]
     returnData = []
     for singleResponse in response:
-        gogoAnimeUrl = "https://www10.gogoanime.io/category/"
         title = singleResponse["title"]
-        title = title.split()
-        for x in range(len(title)):
-            if (x == 0):
-                gogoAnimeUrl += title[x]
-            else:
-                gogoAnimeUrl += '-'
-                gogoAnimeUrl += title[x]
-
+        gogoAnimeUrl = genGogoAnimeUrl(title)
         returnData.append([singleResponse["title"], singleResponse["synopsis"], gogoAnimeUrl, singleResponse["score"], singleResponse["image_url"]])
     return returnData
 
@@ -153,5 +157,8 @@ def getAnimeGenreInfo(submittedGenre):
     animes = response["anime"]
     returnData = []
     for anime in animes:
-        returnData.append([anime["title"], anime["synopsis"]])
+        gogoAnimeUrl = genGogoAnimeUrl(anime["title"])
+        returnData.append([anime["title"], anime["synopsis"], gogoAnimeUrl, anime["score"], anime["image_url"]])
     return returnData
+
+
