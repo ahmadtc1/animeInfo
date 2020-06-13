@@ -20,11 +20,12 @@ def getAnimeInfo(anime):
     for singleResponse in response:
         title = singleResponse["title"]
         gogoAnimeUrl = genGogoAnimeUrl(title)
+        score = singleResponse["score"] if singleResponse["score"] else 0
         dict = {
             'title': singleResponse['title'],
             'synopsis': singleResponse['synopsis'],
             'url': gogoAnimeUrl,
-            'rating': singleResponse['score'],
+            'rating': score,
             'img': singleResponse["image_url"]
         }
         returnData.append(dict)
@@ -165,11 +166,13 @@ def getAnimeGenreInfo(submittedGenre):
     returnData = []
     for anime in animes:
         gogoAnimeUrl = genGogoAnimeUrl(anime["title"])
+        score = anime["score"] if anime["score"] else 0
+
         dict = {
             'title': anime['title'],
             'synopsis': anime['synopsis'],
             'url': gogoAnimeUrl,
-            'rating': anime['score'],
+            'rating': score,
             'img': anime["image_url"]
         }
         returnData.append(dict)
