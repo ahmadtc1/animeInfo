@@ -1,4 +1,5 @@
 # AnimeInfo
+![Push to Heroku](https://github.com/ahmadtc1/animeInfo/workflows/Push%20to%20Heroku/badge.svg?branch=master)
 
 ### What Is It?
 AnimeInfo is a beautifully designed **responsive web application** to help you find out all about your favorite animes as well as explore new animes. With AnimeInfo you can search animes by name, and genre to discover more information about them, as well as find anime specific streaming links.
